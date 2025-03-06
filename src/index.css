@@ -1,0 +1,46 @@
+@import "tailwindcss";
+body {
+  background-color: black;
+  color: white;
+  font-family: 'IBM Plex Mono';
+  background-image: url("/omnibg.svg") !important;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+p {
+  text-align: center;
+  width: 100%;
+}
+
+.slide-bg {
+  background-size: 250% 100%;
+  background-image: linear-gradient(0.15turn, #41B0E6 50%, #8ACA4C 50%);
+  scale: 1;
+  background-position: 0 0;
+  transition: background-position 2s, scale 0.5s;
+}
+.slide-bg:focus-within {
+  background-position: 100% 0;
+  transition: background-position 2s, scale 0.5s;
+}
+.slide-bg:hover {
+  scale: 1.05;
+  transition: background-position 2s, scale 0.5s;
+}
+
+button.slide-bg {
+  background-size: 250% 100%;
+  background-image: linear-gradient(0.15turn, #41B0E6 50%, #8ACA4C 50%);
+  scale: 1;
+  background-position: 0 0;
+  transition: background-position 2s, scale 0.5s;
+}
+button.slide-bg:hover {
+  scale: 1.05;
+  background-position: 100% 0;
+  transition: background-position 2s, scale 0.5s;
+}
