@@ -5,6 +5,7 @@ body {
   font-family: 'IBM Plex Mono';
   background-image: url("/omnibg.svg") !important;
   overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 body::before {
