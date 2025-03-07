@@ -27,7 +27,7 @@ export default async function handler(req, res) {
         const docRef = db.collection('omnivim').doc('visits');
         await db.runTransaction(async (transaction) => {
             const doc = await transaction.get(docRef);
-            const key = [("0" + date.getFullYear()).slice(-4), ("0" + date.getMonth()).slice(-2), ("0" + date.getDate()).slice(-2)].join("")
+            const key = [("0" + date.getFullYear()).slice(-4), ("0" + date.getMonth()).slice(-2), ("0" + date.getDate()).slice(-2)].join("-")
             if (!doc.exists) {
                 transaction.set(docRef, { [key]: 1 });
             } else {

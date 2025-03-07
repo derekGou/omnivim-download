@@ -1,20 +1,21 @@
 @import "tailwindcss";
-body {
+html {
   background-color: black;
   color: white;
   font-family: 'IBM Plex Mono';
-  background-image: url("/omnibg.svg") !important;
   overflow-x: hidden;
   overflow-y: scroll;
 }
 
-body::before {
-  content: "";
-  position: absolute;
-  inset: 0; /* Covers entire parent */
-  background: inherit; /* Inherits the parent's background */
-  filter: blur(5px); /* Apply filter */
-  z-index: -1; /* Keeps it behind the content */
+.bgimg {
+  position: fixed;
+  background-image: url("public/omnibg.svg");
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  filter: blur(10px); /* Apply filter */
 }
 
 h1 {

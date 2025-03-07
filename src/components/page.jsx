@@ -20,6 +20,7 @@ function Page({children}) {
                     </div>
                 </div>
             </div>
+            <div className="bgimg"></div>
         </>
     )
 }
