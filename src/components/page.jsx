@@ -39,6 +39,7 @@ function Page({children}) {
         const data = await response.json();
         if (data.message=="Success"){
             setUsers(data.message)
+            console.log(data.message)
         }
     }
 
