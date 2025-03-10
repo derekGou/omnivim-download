@@ -1,4 +1,47 @@
+import { useEffect, useState } from "react"
+
 function Page({children}) {
+    const [users, setUsers] = useState(0)
+
+    var myBool = true
+
+    useEffect(()=>{
+        getUsers()
+        if (myBool){
+            myBool = false
+            newVisit()
+        }
+    }, [])
+
+    const newVisit = async() => {
+        const response = await fetch('api/visits.js', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+      
+        if (!response.ok) {
+            throw new Error('Failed to increment visits');
+        }
+    }
+
+    const getUsers = async () => {
+        const response = await fetch('api/users.js', {
+            method: 'GET',
+            headers: {
+                "Content-Type": "text/plain",
+            },
+        });
+        if (!response.ok) {
+            throw new Error('Failed to fetch');
+        }
+        const data = await response.json();
+        if (data.message=="Success"){
+            setUsers(data.message)
+        }
+    }
+
     return (
         <>
             <div className="p-4 flex min-h-screen min-w-screen items-center justify-center">
@@ -7,6 +50,7 @@ function Page({children}) {
                         <img className="w-128" src="omnivimtitle.png"></img>
                     </a>
                     <h1>Global vim motions. Any app, any OS.</h1>
+                    <p>{users + "users"}</p>
                     <hr className="bg-white w-full"/>
                     {children}
                     <div className="flex flex-row gap-4 items-center justify-center">

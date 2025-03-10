@@ -24,7 +24,7 @@ export default async function handler(req, res) {
     }
 
     try {
-        const docRef = db.collection('analytics').doc('visits');
+        const docRef = db.collection('analytics').doc('download');
         await db.runTransaction(async (transaction) => {
             const doc = await transaction.get(docRef);
             const key = [("0" + date.getFullYear()).slice(-4), ("0" + date.getMonth()).slice(-2), ("0" + date.getDate()).slice(-2)].join("-")

@@ -18,6 +18,19 @@ function Download() {
     setOS(getOS());
   }, []);
 
+  const newDownload = async() => {
+    const response = await fetch('api/download.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+  
+    if (!response.ok) {
+      throw new Error('Failed to increment visits');
+    }
+  }
+
   return (
     <>
       <Page>
@@ -30,10 +43,10 @@ function Download() {
             <p>Download our Windows-only test version, unzip the folder, and run the executable.</p>
             <div className="flex flex-row items-center justify-center gap-4">
               <a href="/Omnivim.zip" download={true}>
-                <button className="cursor-pointer py-4 px-8 rounded-xl slide-bg">Download ZIP</button>
+                <button onClick={()=>{newDownload()}} className="cursor-pointer py-4 px-8 rounded-xl slide-bg">Download ZIP</button>
               </a>
               <a href="/D.7z" download={true}>
-                <button className="cursor-pointer py-4 px-8 rounded-xl slide-bg">Download 7ZIP</button>
+                <button onClick={()=>{newDownload()}} className="cursor-pointer py-4 px-8 rounded-xl slide-bg">Download 7ZIP</button>
               </a>
             </div>
           </>

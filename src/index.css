@@ -9,7 +9,7 @@ html {
 
 .bgimg {
   position: fixed;
-  background-image: url("public/omnibg.svg");
+  background-image: url("/omnibg.svg");
   top: 0;
   left: 0;
   width: 100vw;
