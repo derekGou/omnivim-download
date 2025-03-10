@@ -37,15 +37,11 @@ export default async function handler(req, res) {
         await db.runTransaction(async (transaction) => {
             const doc1 = await transaction.get(docRef1);
             if (doc1.exists){
-                console.log(doc1?.data())
                 currentVal1 = doc1?.data() || {};
             }
         });
-        console.log(currentVal1)
         currentVal1 = Object.values(currentVal1)
-        console.log(currentVal1)
         currentVal1 = currentVal1.reduce((partialSum, a) => partialSum + a, 0);
-        console.log(currentVal1)
 
         const response1 = await fetch(url1, {
             headers: {
@@ -63,6 +59,7 @@ export default async function handler(req, res) {
         if (!response2.ok) throw new Error(`HTTP error! Status: ${response2.status}`);
         const data2 = await response2.json();
     
+        console.log({ message: data1.forks_count||0 + data2.forks_count||0 + currentVal1 })
         return res.status(200).json({ message: data1.forks_count||0 + data2.forks_count||0 + currentVal1 });
     } catch (error) {
         console.error("Error fetching repo data:", error);
