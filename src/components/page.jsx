@@ -37,10 +37,7 @@ function Page({children}) {
             throw new Error('Failed to fetch');
         }
         const data = await response.json();
-        if (data.message=="Success"){
-            setUsers(data.message)
-            console.log(data.message)
-        }
+        setUsers(data.message)
     }
 
     return (
