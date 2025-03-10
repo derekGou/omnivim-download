@@ -37,8 +37,8 @@ export default async function handler(req, res) {
         await db.runTransaction(async (transaction) => {
             const doc1 = await transaction.get(docRef1);
             if (doc1.exists){
-                console.log(doc1?.data()?.val)
-                currentVal1 = doc1?.data()?.val || [];
+                console.log(doc1?.data())
+                currentVal1 = doc1?.data() || {};
             }
         });
         console.log(currentVal1)
