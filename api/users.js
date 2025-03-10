@@ -51,6 +51,7 @@ export default async function handler(req, res) {
         const response2 = await fetch(url2);
         if (!response2.ok) throw new Error(`HTTP error! Status: ${response2.status}`);
         const data2 = await response2.json();
+        console.log(data1.forks_count)
     
         return res.status(200).json({ message: data1.forks_count + data2.forks_count + currentVal1 });
     } catch (error) {
