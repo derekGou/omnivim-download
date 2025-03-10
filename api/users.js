@@ -40,9 +40,11 @@ export default async function handler(req, res) {
                 currentVal1 = doc1?.data()?.val || [];
             }
         });
-        
+        console.log(currentVal1)
         currentVal1 = Object.values(currentVal1)
+        console.log(currentVal1)
         currentVal1 = currentVal1.reduce((partialSum, a) => partialSum + a, 0);
+        console.log(currentVal1)
 
         const response1 = await fetch(url1);
         if (!response1.ok) throw new Error(`HTTP error! Status: ${response1.status}`);
@@ -51,7 +53,6 @@ export default async function handler(req, res) {
         const response2 = await fetch(url2);
         if (!response2.ok) throw new Error(`HTTP error! Status: ${response2.status}`);
         const data2 = await response2.json();
-        console.log(currentVal1)
     
         return res.status(200).json({ message: data1.forks_count + data2.forks_count + currentVal1 });
     } catch (error) {
