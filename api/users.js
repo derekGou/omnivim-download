@@ -58,14 +58,8 @@ export default async function handler(req, res) {
         });
         if (!response2.ok) throw new Error(`HTTP error! Status: ${response2.status}`);
         const data2 = await response2.json();
-    
-        console.log({ message: data1.forks_count||0 + data2.forks_count||0 + currentVal1 })
 
-        console.log({ message: (data1.forks_count||0) + (data2.forks_count||0) + currentVal1 })
-
-        console.log(currentVal1)
-
-        return res.status(200).json({ message: data1.forks_count||0 + data2.forks_count||0 + currentVal1 });
+        return res.status(200).json({ message: (data1.forks_count||0) + (data2.forks_count||0) + currentVal1 });
     } catch (error) {
         console.error("Error fetching repo data:", error);
         return res.status(500).json({ error: "Internal Server Error" });
