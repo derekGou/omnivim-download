@@ -33,7 +33,7 @@ export default async function handler(req, res) {
   
     try {
         var currentVal1 = []
-        const docRef1 = db.collection('analytics').doc('email');
+        const docRef1 = db.collection('analytics').doc('download');
         await db.runTransaction(async (transaction) => {
             const doc1 = await transaction.get(docRef1);
             if (doc1.exists){
