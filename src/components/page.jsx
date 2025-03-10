@@ -48,7 +48,7 @@ function Page({children}) {
                         <img className="w-128" src="omnivimtitle.png"></img>
                     </a>
                     <h1>Global vim motions. Any app, any OS.</h1>
-                    <p>{"With " + (users === 0 ? 0 : Math.round(users / Math.pow(10, Math.floor(Math.log10(Math.abs(users))) - (users < 100 ? 0 : 1))) * Math.pow(10, Math.floor(Math.log10(Math.abs(users))) - (users < 100 ? 0 : 1))) + "+ downloads"}</p>
+                    <p>{"With " + (users === 0 ? 0 : Math.floor(users / Math.pow(10, Math.floor(Math.log10(Math.abs(users))) - (users < 100 ? 0 : 1))) * Math.pow(10, Math.floor(Math.log10(Math.abs(users))) - (users < 100 ? 0 : 1))) + "+ downloads"}</p>
                     <hr className="bg-white w-full"/>
                     {children}
                     <div className="flex flex-row gap-4 items-center justify-center">
