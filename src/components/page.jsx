@@ -6,10 +6,10 @@ function Page({children}) {
     var myBool = true
 
     useEffect(()=>{
-        getUsers()
         if (myBool){
             myBool = false
             newVisit()
+            getUsers()
         }
     }, [])
 
