@@ -48,7 +48,7 @@ function Page({children}) {
                         <img className="w-128" src="omnivimtitle.png"></img>
                     </a>
                     <h1>Global vim motions. Any app, any OS.</h1>
-                    <p>{"Users: " + users}</p>
+                    <p>{"User count: " + users}</p>
                     <hr className="bg-white w-full"/>
                     {children}
                     <div className="flex flex-row gap-4 items-center justify-center">
