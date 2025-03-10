@@ -42,11 +42,11 @@ function Download() {
           <>
             <p>Download our Windows-only test version, unzip the folder, and run the executable.</p>
             <div className="flex flex-row items-center justify-center gap-4">
-              <a href="/Omnivim.zip" download={true}>
-                <button onClick={()=>{newDownload()}} className="cursor-pointer py-4 px-8 rounded-xl slide-bg">Download ZIP</button>
+              <a onClick={()=>{newDownload()}} href="/Omnivim.zip" download={true}>
+                <button className="cursor-pointer py-4 px-8 rounded-xl slide-bg">Download ZIP</button>
               </a>
-              <a href="/D.7z" download={true}>
-                <button onClick={()=>{newDownload()}} className="cursor-pointer py-4 px-8 rounded-xl slide-bg">Download 7ZIP</button>
+              <a onClick={()=>{newDownload()}} href="/D.7z" download={true}>
+                <button className="cursor-pointer py-4 px-8 rounded-xl slide-bg">Download 7ZIP</button>
               </a>
             </div>
           </>
