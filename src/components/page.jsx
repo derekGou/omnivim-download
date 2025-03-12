@@ -47,7 +47,7 @@ function Page({children}) {
                     <a href="/">
                         <img className="w-128" src="omnivimtitle.png"></img>
                     </a>
-                    <h1>Global vim motions. Any app, any OS.</h1>
+                    <h1>Vim motions made global</h1>
                     <p>{"With " + (users === 0 ? 0 : Math.floor(users / Math.pow(10, Math.floor(Math.log10(Math.abs(users))) - (users < 100 ? 0 : 1))) * Math.pow(10, Math.floor(Math.log10(Math.abs(users))) - (users < 100 ? 0 : 1))).toLocaleString() + "+ downloads"}</p>
                     <hr className="bg-white w-full"/>
                     {children}

@@ -37,6 +37,7 @@ function Download() {
         {os!="Windows" ? 
           <>
             <p>Our test version is only available on Windows. Sign up for our email list to be notified when the full version is out.</p>
+            <button onClick={()=>{setOS("Windows")}} classname="cursor-pointer py-4 px-8 rounded-xl slide-bg">Continue anyway</button>
           </>
           :
           <>
